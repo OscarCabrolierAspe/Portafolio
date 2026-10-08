@@ -712,19 +712,30 @@ section,
 .hero .container {
   position: relative;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .hero h2 {
   font-family: var(--pixel-font2);
-  margin: 0;
+  color:var(--accent-color);
+  margin: 0 0 10px 0;
   font-size: 64px;
   font-weight: 700;
+  display: inline-block; /* <-- Esto hace que la caja mida solo lo que el texto */
+  background-color: rgba(0, 0, 0, 0.6); /* Tu color de fondo con transparencia */
+  padding: 5px 12px;
 }
 
 .hero p {
   margin: 5px 0 0 0;
   font-size: 26px;
   font-family: var(--pixel-font);
+  display: inline-block; /* <-- Esto hace que la caja mida solo lo que el texto */
+  background-color: rgba(0, 0, 0, 0.6); /* Tu color de fondo con transparencia */
+  padding: 5px 12px;
 }
 
 .hero p span {
@@ -771,6 +782,11 @@ section,
 .about .content h2 {
   font-weight: 700;
   font-size: 24px;
+}
+.about-img {
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px var(--accent-color);
 }
 
 .about .content p{
@@ -1098,6 +1114,9 @@ section,
 
 .service-details .services-img {
   margin-bottom: 20px;
+  border-radius: 20px;
+  max-height: 300px;
+  box-shadow: 0 4px 16px var(--accent-color);
 }
 
 .service-details h3 {
