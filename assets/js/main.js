@@ -1,11 +1,3 @@
-/**
-* Template Name: Personal
-* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-* Updated: Mar 05 2025 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 (function() {
   "use strict";
 
@@ -200,5 +192,43 @@
     });
 
   });
+  /**
+   * Navmenu scrollspy (Activa el enlace del menú según la sección visible)
+   */
+  let navmenulinks = document.querySelectorAll('.navmenu a');
+
+  function navmenuScrollspy() {
+    let position = window.scrollY + 250;
+    
+    // Si estamos en la parte superior (o al cargar la página), activa "Inicio"
+    if (window.scrollY < 200) {
+      navmenulinks.forEach(link => link.classList.remove('active'));
+      // Busca el enlace de inicio por su href="#" o por el texto/clase
+      let inicioLink = document.querySelector('.navmenu a[href="#"]') || document.querySelector('.navmenu a');
+      if (inicioLink) inicioLink.classList.add('active');
+      return;
+    }
+
+    navmenulinks.forEach(navmenulink => {
+      if (!navmenulink.hash) return;
+      let section = document.querySelector(navmenulink.hash);
+      if (!section) return;
+      
+      let sectionTop = section.offsetTop;
+      let sectionHeight = section.offsetHeight;
+      
+      if (navmenulink.hash === '#about') {
+        sectionTop = sectionTop - 250; 
+      }
+
+      if (position >= sectionTop && position <= (sectionTop + sectionHeight)) {
+        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+        navmenulink.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('load', navmenuScrollspy);
+  document.addEventListener('scroll', navmenuScrollspy);
 
 })();
