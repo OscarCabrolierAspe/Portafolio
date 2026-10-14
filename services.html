@@ -56,9 +56,10 @@
       </nav>
 
     </div>
+    
   </header>
 
-  <main class="main">
+  <main class="main colorbottom">
 
     <!-- Page Title -->
     <div class="page-title" data-aos="fade">
@@ -89,91 +90,158 @@
     <!-- Services Section -->
     <section id="services" class="services section">
 
-      <div class="container">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
+        <!-- Añadimos la clase init-swiper para que JS lo detecte -->
+        <div class="swiper init-swiper">
+          
+          <div class="swiper-wrapper">
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="bi bi-window-stack"></i>
+            <!-- Item 1 -->
+            <div class="swiper-slide">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-window-stack"></i>
+                </div>
+                <a href="#service-details" class="stretched-link">
+                  <h3>Desarrollo Web Full Stack</h3>
+                </a>
               </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Desarrollo Web Full Stack</h3>
-              </a>
-              <p>Creación de aplicaciones y sitios web modernos, responsivos y funcionales utilizando tecnologías actuales tanto en el frontend como en el backend.</p>
-            </div>
-          </div><!-- End Service Item -->
+            </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-database"></i>
+            <!-- Item 2 -->
+            <div class="swiper-slide">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-database"></i>
+                </div>
+                <a href="#service-details" class="stretched-link">
+                  <h3>Bases de Datos</h3>
+                </a>
               </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Bases de Datos</h3>
-              </a>
-              <p>Diseño, optimización y administración de modelos relacionales (como SQL o Microsoft Access) para garantizar un almacenamiento de información seguro y eficiente.</p>
-            </div>
-          </div><!-- End Service Item -->
+            </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-shield-lock"></i>
+            <!-- Item 3 -->
+            <div class="swiper-slide">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-shield-lock"></i>
+                </div>
+                <a href="#service-details" class="stretched-link">
+                  <h3>Seguridad Informática</h3>
+                </a>
               </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Seguridad Informática</h3>
-              </a>
-              <p>Implementación de buenas prácticas y análisis preventivo para proteger sistemas, redes e información contra vulnerabilidades comunes.</p>
-            </div>
-          </div><!-- End Service Item -->
+            </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-tools"></i>
+            <!-- Item 4 -->
+            <div class="swiper-slide">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-tools"></i>
+                </div>
+                <a href="#service-details" class="stretched-link">
+                  <h3>Soporte Técnico</h3>
+                </a>
               </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Soporte Técnico</h3>
-              </a>
-              <p>Diagnóstico, resolución de problemas de hardware y software, y optimización de equipos para asegurar un rendimiento óptimo.</p>
-              <a href="service-details.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
+            </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
+            <!-- Item 5 -->
+            <div class="swiper-slide">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-calendar4-week"></i>
+                </div>
+                <a href="#service-details" class="stretched-link">
+                  <h3>Automatización de Procesos</h3>
+                </a>
               </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Automatización de Procesos</h3>
-              </a>
-              <p>Desarrollo de scripts y pequeñas soluciones lógicas (utilizando Java, Python, etc.) para optimizar tareas repetitivas y mejorar la eficiencia.</p>
-              <a href="service-details.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
+            </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
+            <!-- Item 6 -->
+            <div class="swiper-slide">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-chat-square-text"></i>
+                </div>
+                <a href="#service-details" class="stretched-link">
+                  <h3>Asesoría Tecnológica</h3>
+                </a>
               </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Asesoría Tecnológica</h3>
-              </a>
-              <p>Orientación y análisis técnico para proyectos digitales, ayudando a estructurar ideas y elegir las mejores herramientas tecnológicas.</p>
-              <a href="service-details.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
+            </div><!-- End Service Item -->
 
+          </div>
+          <a href="#service-details" class="scroll-down-btn">
+            <i class="bi bi-chevron-down"></i>
+          </a>
+          
+          <!-- Paginación -->
+          <div class="swiper-pagination"></div>
         </div>
 
       </div>
 
     </section><!-- /Services Section -->
 
+    <div id="service-details" class="service-details section " data-aos="fade">
+      <div class="heading ">
+        <div class="container ">
+          <div class="row d-flex justify-content-center text-center">
+            <div id ="detail-service" class="col-lg-8">
+              <h1>Detalles de los Servicios</h1>
+              <p class="mb-0">
+                <p class="mb-0 parrafo">
+                  Además del desarrollo de software, ofrezco soluciones enfocadas en la <strong>seguridad informática</strong> para la protección de sistemas y datos, así como la <strong>automatización de procesos</strong> para optimizar flujos de trabajo operativos y reducir tiempos de ejecución.
+                </p>
+                <p class="mb-0 parrafo">
+                  Brindo también <strong>asesoría tecnológica</strong> personalizada, ayudando a estructurar, diagnosticar y mejorar la infraestructura de hardware, redes y entornos virtuales de acuerdo con las necesidades reales de cada proyecto o negocio.
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Service Details Section -->
+<section id="service-details" class="service-details section">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Menú Lateral -->
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="services-list geist-pixel-style" id="services-nav">
+          <a href="#" class="active" data-service="fullstack">Desarrollo Web Full Stack</a>
+          <a href="#" data-service="backend">Desarrollo Backend & APIs</a>
+          <a href="#" data-service="database">Gestión de Bases de Datos</a>
+          <a href="#" data-service="infrastructure">Soporte e Infraestructura</a>
+        </div>
+
+        <h4>Enfoque Profesional</h4>
+        <p>Comprometido con las buenas prácticas de desarrollo, la seguridad informática y la optimización de procesos tecnológicos para aportar valor real a cada proyecto.</p>
+      </div>
+
+      <!-- Contenido Dinámico a la Derecha -->
+      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200" id="service-content-box">
+        <!-- El contenido por defecto inicial (Full Stack) se cargará aquí -->
+        <h3>Desarrollo de Soluciones Web Full Stack Escalables</h3>
+        <p>
+          Enfoque integral que abarca desde la maquetación y la experiencia de usuario en el frontend hasta la lógica de negocio y persistencia en el backend. Creación de aplicaciones interactivas, fluidas y conectadas eficientemente.
+        </p>
+        <ul>
+          <li><i class="bi bi-check-circle"></i> <span>Creación de interfaces modernas, dinámicas y adaptables (Responsive Design).</span></li>
+          <li><i class="bi bi-check-circle"></i> <span>Integración fluida entre servicios front-end y back-end mediante APIs seguras.</span></li>
+          <li><i class="bi bi-check-circle"></i> <span>Aplicación de buenas prácticas de desarrollo y optimización de código.</span></li>
+        </ul>
+        <p>
+          Trabajo conectando cada capa del sistema para asegurar que la aplicación no solo luzca bien visualmente, sino que sea rápida, segura y fácil de mantener a lo largo del tiempo.
+        </p>
+        <p>
+          Si buscas llevar a cabo un proyecto web completo desde cero o modernizar una plataforma existente, puedo aportar una visión global y técnica para obtener el mejor resultado.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section><!-- /Service Details Section -->
   </main>
 
   <footer id="footer" class="footer dark-background">
@@ -186,7 +254,7 @@
       </div>
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Portafolio</strong> <span>Todos los derechos reservados</span>
+          <span>&copy; Copyright</span> <strong class="px-1 sitename">Portafolio</strong> <span>Todos los derechos reservados</span>
         </div>
         <div class="credits">
             Diseñado por <a href="https://www.linkedin.com/in/oscar-cabrolier-aspe-708541281" target="_blank" rel="noopener noreferrer">Oscar Cabrolier Aspe</a>
@@ -215,7 +283,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="assets/js/servicios.js"></script>
 </body>
 
 </html>

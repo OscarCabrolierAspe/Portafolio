@@ -139,9 +139,34 @@
    */
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+      let config;
+      let configElement = swiperElement.querySelector(".swiper-config");
+      
+      // Si existe el bloque de configuración en el HTML, lo lee; si no, usa la configuración por defecto
+      if (configElement) {
+        config = JSON.parse(configElement.innerHTML.trim());
+      } else {
+        config = {
+          loop: true,
+          speed: 3000,
+          autoplay: {
+            delay:0,
+            disableOnInteraction: false,
+          },
+          freeMode: {
+            enabled: true,
+            sticky: false,
+            momentum: false
+          },
+          slidesPerView: "auto",
+          spaceBetween: 20,
+          breakpoints: {
+            320: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            1200: { slidesPerView: 3, spaceBetween: 20 }
+          }
+        };
+      }
 
       if (swiperElement.classList.contains("swiper-tab")) {
         initSwiperWithCustomPagination(swiperElement, config);
@@ -193,27 +218,42 @@
 
   });
   /**
-   * Navmenu scrollspy (Activa el enlace del menú según la sección visible)
+   * Navmenu scrollspy y marcado de página actual
    */
   let navmenulinks = document.querySelectorAll('.navmenu a');
 
   function navmenuScrollspy() {
-    let position = window.scrollY + 250;
-    
-    // Si estamos en la parte superior (o al cargar la página), activa "Inicio"
-    if (window.scrollY < 200) {
-      navmenulinks.forEach(link => link.classList.remove('active'));
-      // Busca el enlace de inicio por su href="#" o por el texto/clase
-      let inicioLink = document.querySelector('.navmenu a[href="#"]') || document.querySelector('.navmenu a');
-      if (inicioLink) inicioLink.classList.add('active');
-      return;
-    }
+    // Obtenemos el nombre del archivo actual (ej: "resume.html" o "index.html")
+    let currentPage = window.location.pathname.split("/").pop() || "index.html";
 
     navmenulinks.forEach(navmenulink => {
+      let linkHref = navmenulink.getAttribute('href');
+
+      // CASO 1: Si estamos en páginas internas (resume.html, services.html, etc.)
+      if (currentPage !== "index.html" && currentPage !== "") {
+        // Limpiamos todo active previo
+        navmenulink.classList.remove('active');
+        // Si el href coincide con la página actual, le ponemos la clase active
+        if (linkHref === currentPage) {
+          navmenulink.classList.add('active');
+        }
+        return; // Detenemos la ejecución aquí para esta página
+      }
+
+      // CASO 2: Si estamos en el Index 
       if (!navmenulink.hash) return;
       let section = document.querySelector(navmenulink.hash);
       if (!section) return;
+
+      let position = window.scrollY + 250;
       
+      if (window.scrollY < 200) {
+        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+        let inicioLink = document.querySelector('.navmenu a[href="index.html"]') || document.querySelector('.navmenu a');
+        if (inicioLink) inicioLink.classList.add('active');
+        return;
+      }
+
       let sectionTop = section.offsetTop;
       let sectionHeight = section.offsetHeight;
       
@@ -230,5 +270,4 @@
 
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
-
 })();

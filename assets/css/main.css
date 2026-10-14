@@ -56,6 +56,9 @@ section {
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+main{
+  padding-bottom: 30px;
+}
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -589,10 +592,10 @@ h6 {
 }
 
 .page-title .heading {
-  padding: 160px 0 80px 0;
+  padding: 50px 0 50px 0;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
-.page-title .titulo-sobremi {
+.page-title .colortop {
   padding: 80px 0 80px 0;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   background: linear-gradient(to top,transparent 95%, var(--accent-color) ); 
@@ -637,7 +640,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 30px 0;
   scroll-margin-top: 100px;
   overflow: clip;
 }
@@ -732,6 +735,7 @@ section,
   display: inline-block; /* <-- Esto hace que la caja mida solo lo que el texto */
   background-color: rgba(0, 0, 0, 0.6); /* Tu color de fondo con transparencia */
   padding: 5px 12px;
+  border-radius: 20px;
 }
 
 .hero p {
@@ -741,6 +745,7 @@ section,
   display: inline-block; /* <-- Esto hace que la caja mida solo lo que el texto */
   background-color: rgba(0, 0, 0, 0.6); /* Tu color de fondo con transparencia */
   padding: 5px 12px;
+  border-radius: 40px;
 }
 
 .hero p span {
@@ -754,7 +759,7 @@ section,
 }
 
 .hero .social-links a {
-  background-color: color-mix(in srgb, var(--default-color), transparent 90%);
+  background-color: color-mix(in srgb, var(--background-color), transparent 20%);
   color: var(--default-color);
   font-size: 14px;
   width: 40px;
@@ -764,7 +769,7 @@ section,
   align-items: center;
   justify-content: center;
   margin-right: 20px;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
 .hero .social-links a:hover {
@@ -782,7 +787,7 @@ section,
 }
 /* Botón de scroll hacia abajo en el Hero */
 .hero .scroll-down-btn {
-  position: absolute;
+  position: fixed;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
@@ -798,8 +803,14 @@ section,
   justify-content: center;
   transition: 0.3s;
   animation: bounce 2s infinite; /* Aplica la animación flotante */
+  opacity: 1;
+  visibility: visible;
 }
-
+.scroll-down-btn.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* Evita que se pueda hacer clic cuando esté invisible */
+}
 .hero .scroll-down-btn:hover {
   background-color: var(--accent-color);
   color: #000;
@@ -830,12 +841,12 @@ section,
   margin-bottom: 20px;
   border-radius: 20px;
   box-shadow: 0 4px 16px var(--accent-color);
-  max-width: 100%;       /* Para que no desborde su contenedor */
-  height: auto;          /* Mantiene la proporción original */
-  width: 350px;          /* Define un ancho fijo ideal para pantallas medianas */
+  max-width: 100%;       
+  height: auto;          
+  width: 350px;          
   display: block;
   margin-left: auto;
-  margin-right: auto;    /* Centra la imagen automáticamente */
+  margin-right: auto;   
 
 }
 
@@ -1016,6 +1027,7 @@ section,
   color: var(--accent-color);
 }
 
+
 /*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
@@ -1086,6 +1098,24 @@ section,
   height: 100%;
 }
 
+.services .scroll-down-btn {
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: var(--accent-color);
+  font-size: 28px;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  animation: bounce 2s infinite; /* Aplica la animación flotante */
+}
 .services .service-item .icon {
   margin: 0 auto;
   width: 64px;
@@ -1159,10 +1189,22 @@ section,
   position: relative;
   overflow: hidden;
 }
-
+.colorbottom{
+  background: linear-gradient(to bottom ,transparent 99.5%, var(--accent-color) ); 
+  transition: background 1.2s ease-in-out;
+}
 .services-cta-box h2 {
   font-size: 28px;
   text-shadow: 2px 2px 0px #000;
+}
+
+#service-content-box {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#service-content-box.fade-out {
+    opacity: 0;
 }
 
 /* Botón estilo arcade / videojuego */
@@ -1215,6 +1257,13 @@ section,
   padding: 10px 30px;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   margin-bottom: 20px;
+}
+
+.service-details .heading{
+  padding-top: 100px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  background: linear-gradient(to top,transparent 95%, var(--accent-color) ); 
+  transition: background 1.2s ease-in-out;
 }
 
 .service-details .services-list a {
