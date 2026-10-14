@@ -267,6 +267,21 @@
       }
     });
   }
+  // ==========================================
+    // NUEVO: Lógica para ocultar/mostrar el botón de scroll
+    // ==========================================
+    window.addEventListener("scroll", () => {
+        const scrollBtn = document.querySelector(".scroll-down-btn");
+        
+        // Si el botón existe en la página
+        if (scrollBtn) {
+            if (window.scrollY > 50) {
+                scrollBtn.classList.add("hidden");
+            } else {
+                scrollBtn.classList.remove("hidden");
+            }
+        }
+    });
 
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
