@@ -592,7 +592,7 @@ h6 {
 }
 
 .page-title .heading {
-  padding: 50px 0 50px 0;
+  padding: 80px 0 80px 0;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 .page-title .colortop {
@@ -640,7 +640,12 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 30px 0;
+  /* 
+    Mínimo: 30px (en pantallas chicas)
+    Ideal: 6vh (crece dinámicamente según la altura de la pantalla)
+    Máximo: 80px (para que en pantallas gigantes no quede un espacio gigante)
+  */
+  padding: clamp(30px, 6vh, 120px) 0; 
   scroll-margin-top: 100px;
   overflow: clip;
 }
@@ -1260,7 +1265,7 @@ section,
 }
 
 .service-details .heading{
-  padding-top: 100px;
+  padding-top: 80px;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   background: linear-gradient(to top,transparent 95%, var(--accent-color) ); 
   transition: background 1.2s ease-in-out;
